@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9409496001989515"
+    crossorigin="anonymous"></script>
+
+    <title>Univer Tec</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Univer Tec</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Sobre nós</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Posts</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/angularEs3.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <br><br> <br>
+                        <span class="meta"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>Se você ainda hospeda as suas aplicações frontend em servidores web como apache ou nginx, sinto dizer mas você provavelmente está perdendo dinheiro.</p>
+                    <p>Quando se fala em serverless, sempre pensamos no Lambda da AWS, no Google Cloud Functions, App Engine, etc. até surgir a seguinte dúvida: Se são arquivos estáticos, pra a gente precisa subir um servidor?</p>
+                    <p>No começo, ferramentas como S3 e Google Cloud Storage só serviam para armazenar e compartilhar arquivos. Conforme a tecnologia na nuvem foi evoluindo, esses serviços se tornaram muito úteis e poderosos, permitindo que possamos usá-los para hospedar uma aplicação de página única, sem precisar de servidores.</p>
+                    <p>Neste artigo, usaremos o exemplo "hello world" do Angular para criar nossa aplicação. Antes de começar, você precisa ter a versão LTS do Node.js instalada e instalar o Angular CLI com o comando npm install -g @angular/cli.</p>
+                    <p>Com o Node.js e o Angular CLI instalados, basta executar o comando ng new my-s3-app para criar seu aplicativo. Ele fará duas perguntas:</p>
+                    <ul>
+                        <li>Would you like to add Angular routing? (y/N)</li>
+                        <li>Which stylesheet format would you like to use?</li>
+                    </ul>
+                    <p>Na prática, a escolha aqui não faz muita diferença. Eu geralmente escolho "yes" para adicionar o roteamento (digite "y" e pressione Enter) e seleciono o SCSS para os estilos (use as setas e pressione Enter).</p>
+                    <p>Após isso, o Angular criará a aplicação e instalará as dependências necessárias para o seu projeto ser executado. Abra a pasta do projeto no terminal e digite ng serve para executar o servidor localmente e ver se está tudo certo. Acesse localhost:4200 no navegador e você verá a página inicial.</p>
+                   <div style="height: 700px;">
+                    <img src="img/angularpaginainicial.png" alt="" srcset="">                    
+                   </div>
+                    <p>No terminal, digite o comando "ng build". Isso criará uma pasta chamada "dist" dentro do seu projeto com a versão de produção do seu aplicativo. Lembre-se dessa pasta, pois são os arquivos dela que serão enviados para o S3.</p>
+                    <p>Vamos publicar a nossa aplicação no Amazon S3. Para isso, é necessário ter uma conta AWS. Se você não tiver uma, pode se cadastrar em https://aws.amazon.com. No primeiro ano, você pode experimentar vários serviços gratuitamente. É uma ótima oportunidade para testar diferentes configurações e serviços.</p>
+                    <p>Para criar o Bucket, faça login no console AWS e selecione o menu Services > Storage > S3. Lá, precisamos criar um bucket para armazenar a aplicação. O nome do bucket é único em todas as contas da AWS e fará parte do nome de domínio, então escolha um nome que ainda não tenha sido usado, mas que não seja estranho.</p>
+                    <p>Dependendo da região, o S3 pode usar dois formatos de URL:</p>
+                    <p>s3-website dash (-) Region ‐ http://nomedobucket.s3-website-Region.amazonaws.com </p>
+                    <p>ps3-website dot (.) Region ‐ http://nomedobucket.s3-website.Region.amazonaws.com</p>
+                     <p>Segue abaixo a minha configuração</p>   
+                     <div style="height: 400px;">
+                        <img src="img/bucketecs3.png" alt="">
+                     </div>
+                     <p>Ao clicar em Create Bucket, ele deve ficar disponível pra você no console do S3:</p>
+                     <h2>Subindo os arquivos</h2>
+                     <p>Clique no bucket que acabamos de criar, depois clique em upload e depois em add files. Vá para a pasta dist  my-s3-app que o ng build acabou de gerar e selecione todos os arquivos usando o mouse, ctrl+a (windows) . Você deve ver esse resultado:</p>
+                     <div style="height: 600px;">
+                        <img src="img/subindoarquivoss3.png" alt="">
+                     </div>
+                     <p>Se tudo estiver certo, basta clicar em upload, esperar a confirmação e partir para a próxima etapa.</p>
+                     <p>Ativando a hospedagem:</p>
+                     <p>Agora, para ativarmos a hospedagem de sites estáticos, vá em Properties &gt; Static website hosting &gt; Edit.</p>
+                     <p>Na página de edição, selecione "enable" para habilitar a hospedagem de sites estáticos. Preencha "index.html" nos campos Index e Error document e salve as alterações.</p>
+                     <p>Ao voltar na aba properties, uma URL terá sido criada!</p>
+                     <p>Porém, ao tentar acessar, você verá a seguinte mensagem:</p>
+                     <div style="width: 200px;">
+                        <img src="img/erron1.png" alt="">
+                     </div>
+                     <p>Isso acontece porque todos os buckets são privados por padrão, tornando-os inacessíveis.</p>
+                     <p>Para alterar isso, ainda no Bucket, vamos precisar ir na aba Permissions &gt; Block public access &gt; Edit.</p>
+                     <div style="height: 700px;">
+                        <img src="img/paginadeliberacaocss.png" alt="">
+                     </div>                     
+                     <p>Nessa tela, desmarcamos a opção Block all public access e deixamos marcado somente as opções:</p>
+                     <ul>
+                     <li>Block public access to buckets and objects granted through new access control lists (ACLs)</li>
+                     <li>Block public access to buckets and objects granted through any access control lists (ACLs)</li>
+                     </ul>
+                     <p>Além disso, vamos precisar criar uma policy para garantir acesso anônimo para que os usuários possam acessar o bucket. Ainda na aba Permissions, vá em Bucket policy &gt; Edit. Cole o conteúdo abaixo, substituindo a tag &lt;NOME_DO_SEU_BUCKET&gt; pelo nome do seu bucket:</p>
+                     <pre>
+                        &lt;code&gt;
+                        {
+                           "Version": "2023-04-17",
+                           "Statement": [
+                              {
+                                 "Effect": "Allow",
+                                 "Principal": "*",
+                                 "Action": [
+                                    "s3:GetObject"
+                                 ],
+                                 "Resource": [
+                                    "arn:aws:s3:::<NOME DO SEU BUCKET>/*"
+                                 ]
+                              }
+                           ]
+                        }
+                        &lt;/code&gt;
+                     </pre>
+                     <p>Para garantir a segurança do nosso bucket, devemos permitir apenas o acesso ao GetObject para que os usuários possam visualizar a aplicação, mas não possam modificar nenhum conteúdo.</p>
+<p>Parabéns! Agora é só comemorar. Acesse novamente o link fornecido em static web hosting e você poderá ver a sua página rodando com sucesso.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

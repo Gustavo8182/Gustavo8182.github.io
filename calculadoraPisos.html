@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9409496001989515"
+     crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #deb887;">
+		<article style="border: 5px solid black; "> 
+			<h1>Calculadora de pisos</h1>
+			<div>
+				<h3>Dados do cômodo</h3>
+				<label for="">Largura do comodo</label>
+				<input type="text" name="" id="largura-comodo" placeholder="10m">
+				<label for="">Comprimento do comodo</label>
+				<input type="text" name="" id="comprimento-comodo" placeholder="5m">
+			</div>
+			<hr>
+			<div>
+				<h3>Dados do piso</h3>
+				<label for="">Largura do piso</label>
+				<input type="text" name="" id="largura-piso" placeholder="30cm">
+				<label for="">Comprimento do piso</label>
+				<input type="text" name="" id="comprimento-piso" placeholder="30cm">
+			</div>
+			<button id="btn-calcular-pisos" style="width: 50; height: 50px; font-size: large;margin-top: 50px;">CALCULAR</button>
+			</article>
+			<article>
+			<div>
+				<h3>Quantidade de pisos necessário</h3>
+				<p>Quantidade de pisos</p> 
+				<input id="quantidade-piso" value="0" disabled/>
+				<p>Quantidade de pisos com margem de 20% para erro de corte em </p>
+				<input id="quantidade-piso-erro" value="0" disabled/>
+			</div>
+		</article>
+		<script src="src/controller.js/util/Format.js"></script>
+		<script src="src/controller.js/CalculadoraController.js"></script>
+		<script src="src/app.js"></script>
+</body>
+</html>
